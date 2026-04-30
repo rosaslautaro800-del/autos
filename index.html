@@ -12,9 +12,9 @@ body{
   color:white;
   font-family:Arial;
   text-align:center;
+  overflow-x:hidden;
 }
 
-/* CONTENEDOR */
 .container{
   max-width:1200px;
   margin:auto;
@@ -33,6 +33,28 @@ body{
   to{transform:rotate(360deg);}
 }
 
+/* AUTO ANIMADO */
+.car{
+  position:fixed;
+  bottom:10px;
+  left:-250px;
+  width:180px;
+  z-index:9999;
+  pointer-events:none;
+  animation:drive 6s linear infinite;
+}
+
+/* si no ves el auto, probablemente falta la imagen car.png */
+
+@keyframes drive{
+  0%{left:-250px; transform:scaleX(1);} 
+  49%{transform:scaleX(1);} 
+  50%{left:110%; transform:scaleX(-1);} 
+  100%{left:-250px; transform:scaleX(-1);} 
+}
+  100%{left:110%;}
+}
+
 /* TITULOS */
 h2{
   color:#ffae00;
@@ -40,12 +62,10 @@ h2{
   text-shadow:0 0 10px orange;
 }
 
-/* SECCIONES */
 .section{
   padding:40px;
 }
 
-/* GRID */
 .grid{
   display:flex;
   justify-content:center;
@@ -53,7 +73,6 @@ h2{
   flex-wrap:wrap;
 }
 
-/* IMAGENES */
 img{
   max-width:100%;
   height:auto;
@@ -66,11 +85,12 @@ img{
   box-shadow:0 0 15px rgba(255,100,0,0.5);
 }
 
+/* HOVER PRO */
 .grid img:hover{
-  transform:scale(1.1);
+  transform:scale(1.1) rotate(2deg);
+  box-shadow:0 0 30px orange;
 }
 
-/* VIDEO */
 iframe{
   width:80%;
   height:400px;
@@ -78,7 +98,6 @@ iframe{
   box-shadow:0 0 20px orange;
 }
 
-/* CARDS */
 .card{
   background:#111;
   padding:15px;
@@ -96,50 +115,87 @@ iframe{
 }
 
 .card:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 20px orange;
+  transform:scale(1.08);
+  box-shadow:0 0 25px orange;
 }
 
-/* LINEA */
+/* LINEA FUEGO */
 .line{
   height:5px;
   background:linear-gradient(90deg,transparent,orange,transparent);
   margin:40px 0;
-  box-shadow:0 0 10px orange;
+  box-shadow:0 0 15px orange;
+  animation:glow 2s infinite alternate;
 }
 
-/* FOOTER */
+@keyframes glow{
+  from{box-shadow:0 0 5px orange;}
+  to{box-shadow:0 0 20px orange;}
+}
+
 footer{
   padding:20px;
   color:#aaa;
 }
+
+
+/* FONDO TIPO PISTA */
+body::after{
+  content:"";
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:80px;
+  background:repeating-linear-gradient(
+    90deg,
+    #111 0px,
+    #111 40px,
+    #222 40px,
+    #222 80px
+  );
+  z-index:-1;
+}
+
+/* EFECTO FUEGO DETRAS DEL AUTO */
+.car::after{
+  content:"";
+  position:absolute;
+  left:-40px;
+  top:50%;
+  width:60px;
+  height:10px;
+  background:linear-gradient(90deg, orange, red, transparent);
+  filter:blur(6px);
+}
+
 </style>
 
 </head>
 <body>
 
+<!-- AUTO ANIMADO -->
+<img src="carrito.png" class="car">
+
 <div class="container">
 
-<!-- LOGO -->
 <div class="logo">
   <img src="logo.png">
 </div>
 
 <div class="line"></div>
 
-<!-- AUTOS -->
 <div class="section">
   <h2>AUTOS HOT WHEELS</h2>
   <div class="grid">
     <img src="img1.jpg">
-    <img src="img2.jpeg">
-    <img src="img3.jpeg">
+    <img src="img2.jpg">
+    <img src="img3.jpg">
   </div>
 </div>
 
 <div class="line"></div>
 
-<!-- VIDEO -->
 <div class="section">
   <h2>VIDEO</h2>
   <iframe src="https://www.youtube.com/embed/0u3b7DAmQZI" allowfullscreen></iframe>
@@ -147,75 +203,49 @@ footer{
 
 <div class="line"></div>
 
-<!-- AUTOS RAROS -->
 <div class="section">
   <h2>AUTOS RAROS / COLECCIONABLES</h2>
-
   <div class="grid">
-
     <div class="card">
       <img src="mit.jpg">
       <p>Mitsubishi Eclipse</p>
     </div>
-
     <div class="card">
       <img src="scooby.jpg">
       <p>Van de Scooby Doo</p>
     </div>
-
     <div class="card">
       <img src="spiderman.jpg">
       <p>Modelo raro</p>
     </div>
-
   </div>
 </div>
 
 <div class="line"></div>
 
-<!-- HISTORIA -->
 <div class="section">
   <h2>HISTORIA DE HOT WHEELS</h2>
-  <p>
-    Hot Wheels fue creado en 1968 por Mattel con la idea de hacer autos de juguete más rápidos y llamativos.
-    Se destacaron por sus ruedas de baja fricción y diseños inspirados en autos reales.
-  </p>
-  <p>
-    Con el tiempo se convirtió en una de las marcas más importantes del mundo del coleccionismo.
-  </p>
+  <p>Hot Wheels nació en 1968 por Mattel revolucionando los autos de juguete con velocidad y diseño.</p>
 </div>
 
 <div class="line"></div>
 
-<!-- ESCALAS -->
 <div class="section">
-  <h2>ESCALAS Y COMPARATIVAS</h2>
-
+  <h2>ESCALAS</h2>
   <div class="grid">
-
     <div class="card">
-      <img src="164.jpg">
-      <p><b>Escala 1:64</b><br>La más común en Hot Wheels.</p>
+      <img src="escala1.jpg">
+      <p>1:64</p>
     </div>
-
     <div class="card">
-      <img src="ferrari.jpg">
-      <p><b>Escala 1:43</b><br>Más grande y detallada.</p>
+      <img src="escala2.jpg">
+      <p>1:43</p>
     </div>
-
     <div class="card">
-      <img src="118.jpg">
-      <p><b>Escala 1:18</b><br>Modelo de colección.</p>
+      <img src="escala3.jpg">
+      <p>1:18</p>
     </div>
-
   </div>
-
-  <div class="card" style="margin:30px auto;">
-    <p>
-      Un auto real mide aproximadamente 4 metros. En escala 1:64 mide entre 6 y 7 cm.
-    </p>
-  </div>
-
 </div>
 
 <div class="line"></div>
