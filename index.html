@@ -33,7 +33,7 @@ body{
   to{transform:rotate(360deg);}
 }
 
-/* CARRITO ANIMADO */
+/* CARRITO */
 .car{
   position:fixed;
   bottom:20px;
@@ -60,6 +60,7 @@ h2{
   padding:40px;
 }
 
+/* GRID */
 .grid{
   display:flex;
   justify-content:center;
@@ -146,64 +147,33 @@ body::after{
   z-index:-1;
 }
 
-/* LOGO IG */
-.ig-logo img{
+/* SOCIOS */
+.socios{
+  display:flex;
+  justify-content:center;
+  gap:60px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+
+.socio{
+  text-align:center;
+}
+
+.socio img{
   width:120px;
   cursor:pointer;
   transition:0.6s;
   filter:drop-shadow(0 0 10px orange);
 }
 
-.ig-logo img:hover{
+.socio img:hover{
   transform:rotate(360deg) scale(1.1);
 }
 
-/* CARRUSEL */
-.carrusel{
-  overflow:hidden;
-  margin-top:30px;
-}
-
-.track{
-  display:flex;
-  gap:15px;
-  animation:scroll 18s linear infinite;
-}
-
-@keyframes scroll{
-  0%{transform:translateX(0);}
-  100%{transform:translateX(-50%);}
-}
-
-.carrusel .card{
-  min-width:140px;
-  border-radius:10px;
-  overflow:hidden;
-}
-
-.carrusel .card img{
-  width:100%;
-  box-shadow:0 0 10px orange;
-}
-
-/* BOTON */
-.tienda{
-  margin-top:30px;
-}
-
-.tienda a{
-  background:#ff3c00;
-  padding:12px 25px;
-  color:white;
-  text-decoration:none;
-  border-radius:8px;
-  font-weight:bold;
-  box-shadow:0 0 10px orange;
-}
-
-.tienda a:hover{
-  background:#ff1e00;
-  box-shadow:0 0 20px orange;
+.socio p{
+  margin-top:10px;
+  color:#ffae00;
 }
 
 footer{
@@ -215,19 +185,16 @@ footer{
 </head>
 <body>
 
-<!-- CARRITO -->
 <img src="carrito.png" class="car">
 
 <div class="container">
 
-<!-- LOGO -->
 <div class="logo">
   <img src="logo.png">
 </div>
 
 <div class="line"></div>
 
-<!-- AUTOS -->
 <div class="section">
   <h2>AUTOS HOT WHEELS</h2>
   <div class="grid">
@@ -239,7 +206,6 @@ footer{
 
 <div class="line"></div>
 
-<!-- VIDEO -->
 <div class="section">
   <h2>VIDEO</h2>
   <iframe src="https://www.youtube.com/embed/0u3b7DAmQZI" allowfullscreen></iframe>
@@ -247,32 +213,17 @@ footer{
 
 <div class="line"></div>
 
-<!-- AUTOS RAROS -->
 <div class="section">
   <h2>AUTOS RAROS / COLECCIONABLES</h2>
   <div class="grid">
-
-    <div class="card">
-      <img src="mit.jpg">
-      <p>Mitsubishi Eclipse</p>
-    </div>
-
-    <div class="card">
-      <img src="scooby.jpg">
-      <p>Van de Scooby Doo</p>
-    </div>
-
-    <div class="card">
-      <img src="spiderman.jpg">
-      <p>Modelo raro</p>
-    </div>
-
+    <div class="card"><img src="mit.jpg"><p>Mitsubishi Eclipse</p></div>
+    <div class="card"><img src="scooby.jpg"><p>Van de Scooby Doo</p></div>
+    <div class="card"><img src="spiderman.jpg"><p>Modelo raro</p></div>
   </div>
 </div>
 
 <div class="line"></div>
 
-<!-- HISTORIA -->
 <div class="section">
   <h2>HISTORIA</h2>
   <p>Hot Wheels nació en 1968 por Mattel revolucionando los autos de juguete con velocidad y diseño.</p>
@@ -280,7 +231,6 @@ footer{
 
 <div class="line"></div>
 
-<!-- ESCALAS -->
 <div class="section">
   <h2>ESCALAS</h2>
   <div class="grid">
@@ -292,38 +242,27 @@ footer{
 
 <div class="line"></div>
 
-<!-- IG + TIENDA -->
+<!-- SOCIOS -->
 <div class="section">
-<h1>Venta de autos Hot Wheells</h1>
-  <div class="ig-logo">
-    <a href="https://www.instagram.com/purohobby.sanjuan?igsh=MWhycDRqZXE0ZTR2dg%3D%3D">
-      <img src="hbby.png">
-    </a>
-  </div>
+  <h2>SOCIOS</h2>
 
-  <h2>Haz click en el logo!</h2>
+  <div class="socios">
 
-  <div class="carrusel">
-    <div class="track">
-
-      <div class="card"><img src="mit.jpg"></div>
-      <div class="card"><img src="spiderman.jpg"></div>
-      <div class="card"><img src="scooby.jpg"></div>
-      <div class="card"><img src="ferrari.jpg"></div>
- <div class="card"><img src="mit.jpg"></div>
-      <div class="card"><img src="spiderman.jpg"></div>
-      <div class="card"><img src="scooby.jpg"></div>
-      <div class="card"><img src="ferrari.jpg"></div>
-
+    <div class="socio">
+      <a href="https://www.instagram.com/purohobby.sanjuan" target="_blank">
+        <img src="hbby.png">
+      </a>
+      <p>Puro Hobby</p>
     </div>
-  </div>
 
-  <div class="tienda">
-    <a href="https://TU-TIENDA.com" target="_blank">
-      Ir a la tienda 🛒
-    </a>
-  </div>
+    <div class="San Juan Greek">
+      <a href="https://www.instagram.com/sj_geekcollection?igsh=MXB5MzRoeHBtNDF4aA%3D%3D">
+        <img src="greek.png">
+      </a>
+      <p>San Juan Greek Collection</p>
+    </div>
 
+  </div>
 </div>
 
 <div class="line"></div>
